@@ -1,0 +1,252 @@
+/* Собственно сам слайдер */
+.slider {
+  max-width: 90%;
+
+  margin: auto;
+  height: 300px;
+}
+/* Картинка мастабируется по отношению к родительскому элементу */
+
+.item {
+  position: relative;
+}
+
+.img {
+  width: 85px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 16px;
+}
+
+/* Заголовок слайда */
+.slideText-box {
+  position: relative;
+}
+
+.slideText-box::before {
+  content: "";
+  position: absolute;
+  top: 32px;
+  left: 105px;
+  display: inline-block;
+  width: 54px;
+  height: 40px;
+  background: url(..//..//img/reviews/quotes@1.png) center/cover no-repeat;
+  z-index: 50;
+
+  @media (max-width: 480px) {
+    top: 3%;
+    left: 10%;
+  }
+
+  @media (min-width: 481px) and (max-width: 1200px) {
+    top: 8%;
+    left: 12%;
+  }
+}
+
+.slideText-bg {
+  display: inline-block;
+  margin: 0 auto;
+  width: 100%;
+  height: 138px;
+
+  background: #fafafa;
+
+  @media (max-width: 409px) {
+    height: 200px;
+  }
+
+  @media (min-width: 410px) and (max-width: 480px) {
+    height: 170px;
+  }
+
+  @media (min-width: 481px) and (max-width: 644px) {
+    height: 175px;
+  }
+
+  @media (min-width: 645px) and (max-width: 1020px) {
+    height: 150px;
+  }
+  @media (min-width: 1021px) and (max-width: 1200px) {
+    height: 110px;
+  }
+}
+
+.slideText {
+  position: absolute;
+  top: 50px;
+  width: 70%;
+  left: 142px;
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 186%;
+  text-align: center;
+  letter-spacing: 0.04em;
+
+  color: $main-text-color;
+  z-index: 100;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 27px,
+    #e1e1e1 30px,
+    #e1e1e1 20px
+  );
+
+  @media (max-width: 480px) {
+    top: 30px;
+    left: 15%;
+    font-size: 12px;
+    background: repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 21px,
+      #e1e1e1 23px,
+      #e1e1e1 13px
+    );
+  }
+
+  @media (min-width: 481px) and (max-width: 1200px) {
+    top: 30px;
+    left: 14%;
+    font-size: 14px;
+    background: repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 25px,
+      #e1e1e1 27px,
+      #e1e1e1 17px
+    );
+  }
+}
+
+.second-box {
+  position: relative;
+}
+
+.dots {
+  // position: absolute;
+  // top: 255px;
+  // left: calc(50% - 20px);
+  text-align: center;
+  margin-top: 16px;
+
+  @media (max-width: 409px) {
+    top: 310px;
+  }
+
+  @media (min-width: 410px) and (max-width: 480px) {
+    top: 285px;
+  }
+
+  @media (min-width: 481px) and (max-width: 644px) {
+    top: 298px;
+  }
+
+  @media (min-width: 645px) and (max-width: 1020px) {
+    top: 270px;
+  }
+  @media (min-width: 1021px) and (max-width: 1200px) {
+    top: 230px;
+  }
+}
+
+.dots-pink {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  background-color: $main-color;
+  border-radius: 50%;
+}
+
+.dots-pink:not(:last-child) {
+  margin-right: 10px;
+}
+
+.name {
+  margin-top: 50px;
+  font-family: "DM Sans";
+  font-size: 20px;
+  line-height: 186%;
+  text-align: center;
+
+  @media (max-width: 480px) {
+    margin-top: 33px;
+    font-size: 14px;
+  }
+  @media (min-width: 481px) and (max-width: 1200px) {
+    font-size: 16px;
+  }
+}
+
+/* Кружочки */
+.slider-dots {
+  text-align: center;
+  margin-top: 32px;
+
+  @media (max-width: 480px) {
+    margin-top: 16px;
+  }
+}
+.slider-dots_item {
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  margin: 0 18px;
+  background-color: #ddd;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.active {
+  background-image: url(..//..//img/reviews/house.png);
+  background-color: transparent;
+  border-radius: 0;
+}
+
+/* Анимация слайдов */
+
+.slider .item {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.section__padding-top {
+
+  @media (max-width: 480px) {
+    padding-top: 80px;
+    padding-bottom: 150px;
+  }
+
+  @media (min-width: 481px) and (max-width: 1200px) {
+    padding-top: 80px;
+    padding-bottom: 180px;
+  }
+
+  @media (min-width: 1200px) {    
+    padding-top: 120px;
+    padding-bottom: 220px;
+  }
+}

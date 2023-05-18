@@ -1,0 +1,105 @@
+// Для розовой кнопки классы - btn btn__acent
+// Для белой кнопки классы - btn btn__light
+
+// Размер кнопки меняется в зависимости от размера экрана.
+// Ниже значения которые нужно вставлять отдельно в зависимости от секции
+
+//   padding: ваше значение;
+//   border-radius: 22px или 20px;
+//   font-size: ваше значение;
+
+.btn {
+  position: relative;
+  border: none;
+  transition: $transition;
+
+  &__light {
+    color: #d41443;
+    background-color: #ffffff;
+
+    &:hover,
+    &:focus {
+      background-color: #ecebeb;
+    }
+  }
+
+  &__acent {
+    color: #ffffff;
+    background-color: #d41443;
+
+    &:hover,
+    &:focus {
+      background-color: #c7133e;
+    }
+  }
+}
+
+// СТРЕЛКА НА РОЗОВУЮ КНОПКУ
+// Структура вашей кнопки:
+//    <button type="button" class="btn btn__acent">
+//         Read more <span class="arrow"></span>
+//    </button>
+
+.arrow {
+  position: absolute;
+  top: calc(50% - 3px);
+  right: 15%;
+  height: 10px;
+  width: 7px;
+  cursor: pointer;
+}
+
+.arrow::before,
+.arrow::after {
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 2px;
+  background-color: white;
+  border-radius: 2px;
+}
+
+.arrow::before {
+  transform: rotate(45deg);
+
+  top: 15%;
+}
+.arrow::after {
+  transform: rotate(-45deg);
+  top: 50%;
+}
+
+// СТРЕЛКА НА БЕЛУЮ КНОПКУ
+// Структура вашей кнопки:
+//    <button type="button" class="btn btn__light">
+//         Read more <span class="arrow-light"></span>
+//    </button>
+
+.arrow-light {
+  position: absolute;
+  top: calc(50% - 3px);
+  right: 15%;
+  height: 10px;
+  width: 7px;
+  cursor: pointer;
+}
+
+.arrow-light::before,
+.arrow-light::after {
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 2px;
+  background-color: #d41443;
+  border-radius: 2px;
+}
+
+.arrow-light::before {
+  transform: rotate(45deg);
+
+  top: 15%;
+}
+.arrow-light::after {
+  transform: rotate(-45deg);
+  top: 50%;
+}
