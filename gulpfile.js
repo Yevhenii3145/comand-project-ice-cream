@@ -1,8 +1,9 @@
-const {series, parallel} = require("gulp");
+const { series, parallel } = require("gulp");
 
-const {clean, pages, styles, images, scripts, watchFiles} = require("./gulp");
+const { clean, pages, styles, images, scripts, watchFiles } = require("./gulp");
 
 // Define complex tasks
+//gg
 const build = series(clean, parallel(pages, styles, images, scripts));
 const dev = series(build, watchFiles);
 
